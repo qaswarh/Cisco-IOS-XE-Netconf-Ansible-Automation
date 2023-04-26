@@ -34,4 +34,4 @@ ansible-playbook -i csr8000v -e secret=secret.var nciosxe_editconfig.yml --tags 
 
 ![ncapphosting2](https://user-images.githubusercontent.com/47313728/234472290-1a9236e3-6666-447f-b25a-676055c2eb12.png)
 
-The playbook did the --get-config before and after configuration<br>
+The playbook registered the --get-config before and after --edit-config<br>
