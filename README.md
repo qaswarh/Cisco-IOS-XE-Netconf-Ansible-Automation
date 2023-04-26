@@ -9,7 +9,7 @@ ansible-playbook -i csr8000v -e secret=secret.var nciosxe_getconfig.yml --tags t
 with following tags:<br>
 
 --tags app-hosting<br>
---tags native, <br>
+--tags native<br>
 --tags netconf-yang<br>
 --tags licensing<br>
 --tags interfaces<br>
