@@ -19,8 +19,8 @@ with following tags:<br>
 --tags network-instances<br>
 --tags running<br>
 
-As an example the output of:<br>
-ansible-playbook -i csr8000v -e secret=secret.var nciosxe_getconfig.yml --tags app-hosting<br>
+As an example the output of<br>
+ansible-playbook -i csr8000v -e secret=secret.var nciosxe_getconfig.yml --tags app-hosting :<br>
 
 ![ncapphosting](https://user-images.githubusercontent.com/47313728/234462886-dea5f231-98c9-48e0-b157-3f32fabc3329.png)
 
