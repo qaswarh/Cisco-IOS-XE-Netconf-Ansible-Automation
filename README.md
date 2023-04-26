@@ -7,6 +7,7 @@ Play nciosxe_getconfig.yml:<br>
 ansible-playbook -i sbx-ao -e secret=secret.var nciosxe_getconfig.yml --tags tags<br>
 
 with following tags:<br>
+
 --tags app-hosting<br>
 --tags native<br>
 --tags netconf-yang<br>
