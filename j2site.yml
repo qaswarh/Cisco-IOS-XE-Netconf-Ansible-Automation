@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - '{{env_file}}'
+
+  tasks:
+
+    - name: apphosting.j2 to ncapphosting
+      template:
+        src: apphosting.j2
+        dest: ncapphosting
