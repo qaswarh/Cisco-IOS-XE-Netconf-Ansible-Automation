@@ -25,8 +25,8 @@ ansible-playbook -i csr8000v -e secret=secret.var nciosxe_getconfig.yml --tags a
 ![ncapphosting1](https://user-images.githubusercontent.com/47313728/234462886-dea5f231-98c9-48e0-b157-3f32fabc3329.png)
 
 Create j2 templates like `apphosting.j2`, `netconfyang.j2`, `licensing.j2`, `interfaces.j2`, `nacm.j2` `routing.j2`, `acl.j2`, `network-instances.j2` etc.<br>
-Create a playbook to convert j2 templates to Netconf templates with site-specific dictionary<br>
-var env_file in the playbook gets dictonary and provide values for the keys in j2 templates<br>
+Create a playbook (e.g. j2site.yml) to convert j2 templates to Netconf templates with site-specific dictionary<br>
+Var env_file in the playbook gets dictonary and provide values for the keys in j2 templates<br>
 Use nciosxe_editconfig.yml to edit/create configuration with Netconf<br>
 
 With no change of data, the idempotancy example for the output of<br>
