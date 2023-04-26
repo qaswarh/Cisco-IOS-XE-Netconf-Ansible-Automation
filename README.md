@@ -29,4 +29,7 @@ Create a playbook to convert j2 templates to Netconf templates with site-specifi
 var env_file in the playbook gets dictonary and provide values for the keys in j2 templates<br>
 Use nciosxe_editconfig.yml to edit/create configuration with Netconf<br>
 
+As an example the output of<br>
+ansible-playbook -i csr8000v -e secret=secret.var nciosxe_editconfig.yml --tags app-hosting-cfg :<br>
+
 
