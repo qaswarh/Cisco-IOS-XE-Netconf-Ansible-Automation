@@ -1,0 +1,98 @@
+- hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - '{{secret}}'
+    - '{{env_file}}'
+
+  tasks:
+
+    - name: app-hosting config
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \app-hosting-cfg-data
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncapphosting
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \app-hosting-cfg-data
+      register: result
+      tags: app-hosting-cfg
+
+    - debug: var=result.stdout_lines
+      tags: app-hosting-cfg
+
+    - name: native
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \native
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncnative
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \native
+      register: result
+      tags: native-cfg
+
+    - debug: var=result.stdout_lines
+      tags: native-cfg
+
+    - name: netconf-yang
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \netconf-yang
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncnetconfyang
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \netconf-yang
+      register: result
+      tags: netconf-yang-cfg
+
+    - debug: var=result.stdout_lines
+      tags: netconf-yang-cfg
+
+    - name: licensing
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \licensing
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i nclicensing
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \licensing
+      register: result
+      tags: licensing-cfg
+
+    - debug: var=result.stdout_lines
+      tags: licensing-cfg
+
+    - name: interfaces
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \interfaces
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncinterfaces
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \interfaces
+      register: result
+      tags: interfaces-cfg
+
+    - debug: var=result.stdout_lines
+      tags: interfaces-cfg
+
+    - name: nacm
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \nacm
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncnacm
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \nacm
+      register: result
+      tags: nacm-cfg
+
+    - debug: var=result.stdout_lines
+      tags: nacm-cfg
+
+    - name: routing
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \routing
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncrouting
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \routing
+      register: result
+      tags: routing-cfg
+
+    - debug: var=result.stdout_lines
+      tags: routing-cfg
+
+    - name: acl
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \acl
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncacl
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \acl
+      register: result
+      tags: acl-cfg
+
+    - debug: var=result.stdout_lines
+      tags: acl-cfg
+
+    - name: network-instances
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \network-instances
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --edit-config -i ncnetworkinstances
+      shell: ~/.local/bin/netconf-client --host {{iosxe}} --username {{ncuser}} --password file:ncsecret --get-config \network-instances
+      register: result
+      tags: network-instances-cfg
+
+    - debug: var=result.stdout_lines
+      tags: network-instances-cfg
