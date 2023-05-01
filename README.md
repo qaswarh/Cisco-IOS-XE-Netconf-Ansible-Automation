@@ -1,5 +1,5 @@
 # Cisco IOS-XE Netconf with Ansible
-If you've intenet then explore [Cisco IOS XE on CSR](https://devnetsandbox.cisco.com/RM/Diagram/Index/7b4d4209-a17c-4bc3-9b38-f15184e53a94?diagramType=Topology) Netconf config with Ansible<br>
+If you've intenet then explore [Cisco IOS XE CSR](https://devnetsandbox.cisco.com/RM/Diagram/Index/7b4d4209-a17c-4bc3-9b38-f15184e53a94?diagramType=Topology) Netconf config with Ansible<br>
 All you need a Linux Box (ADM Server aka Jump Server) with Python, Netconf and Ansible installed<br>
 Install WSL to experience from Windows machine<br>
 
