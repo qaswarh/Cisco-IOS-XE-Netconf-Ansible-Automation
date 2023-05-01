@@ -3,7 +3,7 @@ If you've intenet then explore [Cisco IOS XE CSR](https://devnetsandbox.cisco.co
 All you need a Linux Box (ADM Server aka Jump Server) with Python, Netconf and Ansible installed<br>
 Use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to experience it from Windows machine<br>
 
-**RPC Get**
+**RPC Get**<br>
 Play nciosxe_getconfig.yml with syntax:<br> 
 ansible-playbook -i csr8000v -e secret=secret.var nciosxe_getconfig.yml --tags tags<br>
 
@@ -25,8 +25,7 @@ ansible-playbook -i csr8000v -e secret=secret.var nciosxe_getconfig.yml --tags a
 
 ![ncapphosting1](https://user-images.githubusercontent.com/47313728/234462886-dea5f231-98c9-48e0-b157-3f32fabc3329.png)
 
-**RPC Edit**
-
+**RPC Edit**<br>
 Create j2 templates like `apphosting.j2`, `netconfyang.j2`, `licensing.j2`, `interfaces.j2`, `nacm.j2` `routing.j2`, `acl.j2`, `network-instances.j2` etc.<br>
 Create a playbook (e.g. j2site.yml) to convert j2 templates to Netconf templates with site-specific dictionary<br>
 Var env_file in the playbook gets dictonary and provide values for the keys in j2 templates<br>
