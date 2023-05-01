@@ -3,10 +3,10 @@ If you've intenet then explore [Cisco IOS XE CSR](https://devnetsandbox.cisco.co
 All you need a Linux Box (ADM Server aka Jump Server) with Python, Netconf and Ansible installed<br>
 Use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to experience it from Windows machine<br>
 
-Play nciosxe_getconfig.yml:<br> 
+Play nciosxe_getconfig.yml with syntax:<br> 
 ansible-playbook -i csr8000v -e secret=secret.var nciosxe_getconfig.yml --tags tags<br>
 
-with following tags:<br>
+and one of the following tags:<br>
 
 --tags app-hosting<br>
 --tags native<br>
